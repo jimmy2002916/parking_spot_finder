@@ -75,12 +75,12 @@ Run the python file to produce data to Kafka broker.
 ```sh
 $ python producer_streaming_data.py
 ```
-### Start the consumer from AWS EMR
+### Start the Flink Application
 Before you run this line, ensure you have an EMR running for you.
 ```sh
 $ /usr/bin/flink run -m yarn-cluster -yn 3 -yjm 1024 -ytm 4096 parking_lot_streaming_data.jar
 ```
-## Build a frontend
+## Build a FrontEnd
 This is the [page](https://github.com/durgesh-sahani/google-map-php-mysql) I refer to build a frontend. 
 ### How to show parking lot spot on the google map?
 1. Run the "parking_lot_php_mysql_google_map", you might need to change the info of DB in the "DbConnect.php". You also need to create database, and table beforehead.
