@@ -97,7 +97,7 @@ $ yum -y install git-all
 $ cd /opt/lampp/htdocs
 $ mkdir parking_lot
 $ cd  parking_lot
-$ git clone https://github.com/durgesh-sahani/google-map-php-mysql.git // make some necessary changes here, or put "parking_lot_php_mysql_google_map" folder under "htdocs"
+$ git clone https://github.com/jimmy2002916/parking_lot_php_mysql_google_map.git // make some necessary changes here, or put "parking_lot_php_mysql_google_map" folder under "htdocs"
 $ sudo /opt/lampp/lampp restart
 ```
 6. Open http://your_aws_ec2_public_ip_here/parking-lot/ (or without http) then you should be able to see the map on the website
