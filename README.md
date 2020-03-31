@@ -95,8 +95,6 @@ $ vim config.inc.php
 ```sh
 $ yum -y install git-all 
 $ cd /opt/lampp/htdocs
-$ mkdir parking_lot
-$ cd  parking_lot
 $ git clone https://github.com/jimmy2002916/parking_lot_php_mysql_google_map.git // make some necessary changes here, or put "parking_lot_php_mysql_google_map" folder under "htdocs"
 $ sudo /opt/lampp/lampp restart
 ```
