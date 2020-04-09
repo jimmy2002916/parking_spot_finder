@@ -18,8 +18,8 @@ public class Main extends Thread {
 
     //    public static final String topic = "parking_lot";
     // ip is EC2 ip, aka kafka server ip
-    public static String bootstrap_servers = "10.224.150.85:9092";
-    public static String zookeeper_connect = "10.224.150.85:2181";
+    public static String bootstrap_servers = "x.x.x.x:9092";
+    public static String zookeeper_connect = "x.x.x.x:2181";
     public static final String topic = "web_access";
 
     public static int msg_sent_count = 0;
