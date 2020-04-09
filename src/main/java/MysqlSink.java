@@ -13,10 +13,10 @@
 //    private PreparedStatement ps=null;
 //    private Connection connection=null;
 //    String dbName = "testdb";
-//    String userName = "carma1";
-//    String password = "carma1234";
-//    String hostname = "carma-servicelib.cluster-cxydmdndgdv7.us-east-1.rds.amazonaws.com";
-////    String hostname = "parking-lot-database.c6p9kfxblbde.us-east-1.rds.amazonaws.com";
+//    String userName = "xxx";
+//    String password = "xxx";
+//    String hostname = "xxx";
+////    String hostname = "xxx";
 //    String port = "3306";
 //    String jdbcUrl = "jdbc:mysql://" + hostname + ":" + port + "/" + dbName + "?user=" + userName + "&password=" + password;
 //
@@ -84,9 +84,9 @@ public class MysqlSink extends RichSinkFunction<Entity>{
     private PreparedStatement ps = null;
     private Connection connection = null;
     String dbName = "testdb";
-    String userName = "carma1";
-    String password = "carma!1234";
-    String hostname = "cobalt-se-db-test.cxydmdndgdv7.us-east-1.rds.amazonaws.com";
+    String userName = "xxx";
+    String password = "xxx";
+    String hostname = "xxx";
     String port = "3306";
     String jdbcUrl = "jdbc:mysql://" + hostname + ":" + port + "/" + dbName + "?user=" + userName + "&password=" + password;
     static int message_from_kafka = 0;
