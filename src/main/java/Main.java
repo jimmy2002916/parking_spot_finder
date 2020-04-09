@@ -18,11 +18,24 @@ public class Main extends Thread {
 
     //    public static final String topic = "parking_lot";
     // ip is EC2 ip, aka kafka server ip
-    public static String bootstrap_servers = "xxxx:9092";
-    public static String zookeeper_connect = "xxxx:2181";
+    public static String bootstrap_servers = "10.224.150.85:9092";
+    public static String zookeeper_connect = "10.224.150.85:2181";
     public static final String topic = "web_access";
 
     public static int msg_sent_count = 0;
+
+    public static Properties SetupProperties(String bootstrap_servers, String zookeeper_connect){
+
+        Properties props = new Properties();
+        props.put("bootstrap.servers", bootstrap_servers);
+        props.put("zookeeper.connect", zookeeper_connect);
+        props.put("group.id", "mysql");
+        props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+        props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+        props.put("auto.offset.reset", "latest");
+
+        return props;
+    }
 
     public static void main(String[] args) throws Exception {
 
@@ -35,31 +48,34 @@ public class Main extends Thread {
 //            System.out.println("msg_sent_count: " + msg_sent_count);
 //        }
 
-
-        FlinkApplication.flink_to_mysql(bootstrap_servers, zookeeper_connect, topic);
+        FlinkApplication.flinkToMysql(
+                StreamExecutionEnvironment.getExecutionEnvironment(),
+                new FlinkKafkaConsumer011<>(topic, new SimpleStringSchema(), Main.SetupProperties(bootstrap_servers, zookeeper_connect)),
+                new MysqlSink()
+        );
         // Data generated from additional thread
 //        Main HbaseFlink = new Main();
 //        HbaseFlink.start();
 
     }
 
-        @Override
-        public void run() {
-            try {
-                flinkToHbase();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-
-        public static void flinkToHbase() throws Exception {
-
-            while (true) {
-                    FlinkApplication.flink_to_hbase(bootstrap_servers, zookeeper_connect, topic);
-                    Thread.sleep(1); // if this setup as 1, broker will be broken, setup as 500 to ensure it can works
-            }
-        }
+//        @Override
+//        public void run() {
+//            try {
+//                flinkToHbase();
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        }
+//
+//        public static void flinkToHbase() throws Exception {
+//
+//            while (true) {
+//                    FlinkApplication.flink_to_hbase(bootstrap_servers, zookeeper_connect, topic);
+//                    Thread.sleep(1); // if this setup as 1, broker will be broken, setup as 500 to ensure it can works
+//            }
+//        }
 
 }
