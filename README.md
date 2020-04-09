@@ -1,7 +1,12 @@
 # Parking Lot Finder
 This project is a streaming data pipeline project, which is aiming to help us to find a real-time available parking lot spot. 
-# Motivation
- Handling real-time streaming data properly and perfectly is one of the biggest challenges in the big data area. The challenge to me is to design it well enough for an operator to maintain easily. Components included in this project is used as minimum as possible, for the sake of simplicity and debug-friendly.
+# Features and Motivation
+Project is built for handling real-time streaming data pipelines that reliably get data between data source and application. The data first get collected by Kafka, then Flink consumes data from Kafka, and sink it to the Mysql. 
+
+On top of the main functionality this project has, the project also uses AWS S3 as one of its data stores, for the purpose of analysing the parking lot usages. With the features of both Flink and Kafka have, we can have more flexibility and options to use data efficiently. It also allows us to make the pipeline more scalable and extendable.
+
+Handling real-time streaming data properly and perfectly is one of the biggest challenges in the big data area. The challenge this project has is to be designed well enough for an operator to maintain easily. Components included in this project is used as minimum as possible, for the sake of simplicity and debug-friendly.
+
 ### Components
 Parking Lot Finder uses a number of open source projects to work properly, below is the version I use:
 * Kafka - 2.4.0
@@ -20,9 +25,9 @@ The whole application is build on the AWS. You have to have an AWS account to ru
 
 The Flink Application is running on AWS EMR 5.29.0(master: c4.8xlarge, core: c4.8xlarge). The Kafka is built on AWS EC2 version 2(c4.4xlarge). 
 
-# Building Application from Source
+# Getting Startted
 ## Installation
-install java in case you don't have it.
+You need to have java installed. 
 ```sh
 $ sudo yum -y install java-1.8.0-openjdk*
 ```
@@ -105,9 +110,3 @@ $ sudo /opt/lampp/lampp restart
 
 Here is the [link](https://stackoverflow.com/questions/3004811/how-do-you-run-multiple-programs-in-parallel-from-a-bash-script) showing you how to run multiple programs in the same script.
 Here is the [link](https://medium.com/@jimmy2002916/problems-that-you-might-run-into-with-kafka-flink-mysql-and-hbase-5192c403b36a) that might be helpful to you. This record most of the error I ran into while building this project. 
-
-# Todos
-
- - Write MORE Tests
-
-
