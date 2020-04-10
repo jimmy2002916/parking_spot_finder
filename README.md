@@ -27,11 +27,10 @@ The whole application is build on the AWS. You have to have an AWS account to ru
 
 The Flink Application is running on AWS EMR 5.29.0(master: c4.8xlarge, core: c4.8xlarge). The Kafka is built on AWS EC2 version 2(c4.4xlarge). 
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| Application   | Instance Type | Version           |
+| ------------- |:-------------------------------:| -----------------:|
+| Kafka         | c4.4xlarge                      | AWS EMR 5.29.0    |
+| Flink         | c4.8xlarge(1 master, 1 core)    | AWS EC2 version 2 |
 
 # Getting Startted
 ## Installation
