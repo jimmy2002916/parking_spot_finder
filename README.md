@@ -26,9 +26,16 @@ Parking Lot Finder uses a number of open source projects to work properly, below
 The whole application is build on the AWS. You have to have an AWS account to run this project. 
 
 | Application   | Instance Type                   | Version           |
-| ------------- |:-------------------------------:| -----------------:|
+| ------------- |:-------------------------------:| :----------------:|
 | Kafka         | c4.4xlarge                      | AWS EMR 5.29.0    |
 | Flink         | c4.8xlarge(1 master, 1 core)    | AWS EC2 version 2 |
+
+### Sample Data
+
+|ID    |CELLID|NAME    |DAY     |HOUR       |PAY    |PAYCASH|MEMO|ROADID|CELLSTATUS|ISNOWCASH|ParkingStatus|lat|lon|
+|------|:----:|:------:|:------:|:---------:|:----:|:----:|:----:|:----:|:-:|:------:|:------:|:------:|:-------------:|
+|100000|17.0  |汽車停車位|週一-週五|07:00-20:00|計時收費|20元/時|     |Q09   |Y|true|1|25.065841900753203|121.64231906665333|
+|100001|56.0  |汽車停車位|週一-週五|07:00-20:00|計時收費|20元/時|     |Q09   |N|true|1|25.065919454316680|121.64223442337554|
 
 # Getting Startted
 ## Installation
