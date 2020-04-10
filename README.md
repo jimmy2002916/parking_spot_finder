@@ -25,9 +25,7 @@ Parking Lot Finder uses a number of open source projects to work properly, below
 ### Specification of Environmets
 The whole application is build on the AWS. You have to have an AWS account to run this project. 
 
-The Flink Application is running on AWS EMR 5.29.0(master: c4.8xlarge, core: c4.8xlarge). The Kafka is built on AWS EC2 version 2(c4.4xlarge). 
-
-| Application   | Instance Type | Version           |
+| Application   | Instance Type                   | Version           |
 | ------------- |:-------------------------------:| -----------------:|
 | Kafka         | c4.4xlarge                      | AWS EMR 5.29.0    |
 | Flink         | c4.8xlarge(1 master, 1 core)    | AWS EC2 version 2 |
