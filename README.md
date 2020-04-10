@@ -25,7 +25,7 @@ Parking Lot Finder uses a number of open source projects to work properly, below
 ### Specification of Environmets
 The whole application is build on the AWS. You have to have an AWS account to run this project. 
 
-| Application   | Instance Type                   | Version           |
+| Application   | EC2 Instance Type                   | Version           |
 | ------------- |:-------------------------------:| :----------------:|
 | Kafka         | c4.4xlarge                      | AWS EMR 5.29.0    |
 | Flink         | c4.8xlarge(1 master, 1 core)    | AWS EC2 version 2 |
