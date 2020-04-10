@@ -1,11 +1,13 @@
 # Parking Lot Finder
 This project is a streaming data pipeline project, which is aiming to help us to find a real-time available parking lot spot. 
-# Features and Motivation
-Project is built for handling real-time streaming data pipelines that reliably get data between data source and application. The data first get collected by Kafka, then Flink consumes data from Kafka, and sink it to the Mysql. 
 
-On top of the main functionality this project has, the project also uses AWS S3 as one of its data stores, for the purpose of analysing the parking lot usages. With the features of both Flink and Kafka have, we can have more flexibility and options to use data efficiently. It also allows us to make the pipeline more scalable and extendable.
+# Features
+Project is built for handling real-time streaming data pipelines. The data first get collected by Kafka, then flow down to the Flink to do some data transformation, and then sink it to the Mysql. 
 
-Parking Lot is not easy to find here in Taiwan, especially in Taipei city. Having a system that provide the functionality this project has is an exciting things for people who suffering from looking for parking lot daily. Meanwhile, it is not that easy to handl real-time streaming data properly and perfectly. The challenge this project has is to be designed well enough for an operator to maintain easily. Components included in this project is used as minimum as possible, for the sake of simplicity and debug-friendly.
+On top of the main functionality this project has, the project also uses AWS S3 as one of its data stores, for the purpose of analysing the parking lot usages. With the features of both Flink and Kafka have, we can have more flexibility and options to use data efficiently. It also allows us to make the pipeline more scalable and extendable if needed. 
+
+# Motivation
+Parking Lot is not easy to find here in Taiwan, especially in Taipei. Having a system that provide the functionality this project has is an exciting things for people who is suffering from looking for parking lot daily. Meanwhile, it is not that easy to handle real-time streaming data properly and perfectly. As a result, the challenge this project has is to be designed well enough for an operator to maintain easily and user friendly. Components included in this project is used as minimum as possible, for the sake of simplicity and debug-friendly.
 
 ### Components
 Parking Lot Finder uses a number of open source projects to work properly, below is the version I use:
