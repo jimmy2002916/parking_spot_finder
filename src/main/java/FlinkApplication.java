@@ -8,7 +8,7 @@ import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase;
 
 import java.util.Properties;
 
-public class FlinkApplication {
+public class FlinkApplication implements Application {
 
     public static void flinkToMysql(
                                       StreamExecutionEnvironment env,
