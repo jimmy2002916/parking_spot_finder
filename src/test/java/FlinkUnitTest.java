@@ -10,7 +10,9 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import org.easymock.*;
 import java.util.stream.Stream;
+
 public class FlinkUnitTest {
+
     @Test
     public void unitTestFlinkApplication() throws Exception{
         FlinkApplication flinkUnitTest = mock(FlinkApplication.class);
@@ -21,11 +23,13 @@ public class FlinkUnitTest {
         );
         expectLastCall().andVoid();
         replay(flinkUnitTest);
+        
         StreamExecutionEnvironment env = mock(StreamExecutionEnvironment.class);
         FlinkKafkaConsumerBase<String> source = mock(FlinkKafkaConsumerBase.class);
         SinkFunction sink = mock(SinkFunction.class);
         flinkUnitTest.flinkToMysql(env,source, sink);
         verify(flinkUnitTest);
+        
     }
 }
 
