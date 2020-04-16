@@ -55,7 +55,8 @@ public class FlinkIntergrationTest{
         env.setParallelism(2);
 
         // execute
-        FlinkApplication.flinkToMysql(
+        Application flinkInstance = new FlinkApplication();
+        flinkInstance.flinkToMysql(
                 env,
                 new FlinkKafkaConsumer011<>(topic, new SimpleStringSchema(), Main.SetupProperties(testBS, testZK)),
                 new CollectSink());
