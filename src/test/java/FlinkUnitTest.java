@@ -12,20 +12,20 @@ public class FlinkUnitTest {
     @Test
     public void unitTestFlinkApplication() throws Exception{
         
-        Application flinkUnitTest = mock(FlinkApplication.class);
-        flinkUnitTest.flinkToMysql(
+        Application mockFlinkApplication = mock(FlinkApplication.class);
+        mockFlinkApplication.flinkToMysql(
                 EasyMock.isA(StreamExecutionEnvironment.class),
                 EasyMock.isA(FlinkKafkaConsumerBase.class),
                 EasyMock.isA(SinkFunction.class)
         );
         expectLastCall().andVoid();
-        replay(flinkUnitTest);
+        replay(mockFlinkApplication);
         
         StreamExecutionEnvironment env = mock(StreamExecutionEnvironment.class);
         FlinkKafkaConsumerBase<String> source = mock(FlinkKafkaConsumerBase.class);
         SinkFunction sink = mock(SinkFunction.class);
-        flinkUnitTest.flinkToMysql(env,source, sink);
-        verify(flinkUnitTest);
+        mockFlinkApplication.flinkToMysql(env,source, sink);
+        verify(mockFlinkApplication);
         
     }
 }
