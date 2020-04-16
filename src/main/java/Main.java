@@ -48,7 +48,8 @@ public class Main extends Thread {
 //            System.out.println("msg_sent_count: " + msg_sent_count);
 //        }
 
-        FlinkApplication.flinkToMysql(
+        Application flinkInstance = new FlinkApplication();
+        flinkInstance.flinkToMysql(
                 StreamExecutionEnvironment.getExecutionEnvironment(),
                 new FlinkKafkaConsumer011<>(topic, new SimpleStringSchema(), Main.SetupProperties(bootstrap_servers, zookeeper_connect)),
                 new MysqlSink()
