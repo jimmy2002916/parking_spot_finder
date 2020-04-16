@@ -9,5 +9,5 @@ public interface Application {
                       FlinkKafkaConsumerBase<String> source,
                       SinkFunction sink
                       );
-                      
+           
 }
