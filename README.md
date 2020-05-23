@@ -1,16 +1,16 @@
-# Parking Lot Finder
-This project is a streaming data pipeline project, which is aiming to help us to find a real-time available parking lot spot. 
+# Parking Spot Finder
+This project is a streaming data pipeline project, which is aiming to help us to find a real-time available parking spot. 
 
 # Features
 Project is built for handling real-time streaming data pipelines. The data first get collected by Kafka, then flow down to the Flink to do some data transformation, and then sink it to the Mysql. 
 
-On top of the main functionality this project has, the project also uses AWS S3 as one of its data stores, for the purpose of analysing the parking lot usages. With the features of both Flink and Kafka have, we can have more flexibility and options to use data efficiently. It also allows us to make the pipeline more scalable and extendable if needed. 
+On top of the main functionality this project has, the project also uses AWS S3 as one of its data stores, for the purpose of analysing the parking spot usages. With the features of both Flink and Kafka have, we can have more flexibility and options to use data efficiently. It also allows us to make the pipeline more scalable and extendable if needed. 
 
 # Motivation
-Parking Lot is not easy to find here in Taiwan, especially in Taipei. Having a system that provide the functionality this project has is an exciting things for people who is suffering from looking for parking lot daily. Meanwhile, it is not that easy to handle real-time streaming data properly and perfectly. As a result, the challenge this project has is to be designed well enough for an operator to maintain easily and user friendly. Components included in this project is used as minimum as possible, for the sake of simplicity and debug-friendly.
+Parking spot is not easy to find here in Taiwan, especially in Taipei. Having a system that provide the functionality this project has is an exciting things for people who is suffering from looking for parking lot daily. Meanwhile, it is not that easy to handle real-time streaming data properly and perfectly. As a result, the challenge this project has is to be designed well enough for an operator to maintain easily and user friendly. Components included in this project is used as minimum as possible, for the sake of simplicity and debug-friendly.
 
 ### Components
-Parking Lot Finder uses a number of open source projects to work properly, below is the version I use:
+Parking Spot Finder uses a number of open source projects to work properly, below is the version I use:
 * Kafka - 2.4.0
 * Flink - 1.9.1
 * ZooKeeper - 3.4.14
@@ -99,7 +99,7 @@ $ /usr/bin/flink run -m yarn-cluster -yn 3 -yjm 1024 -ytm 4096 parking_lot_strea
 ```
 ## Build a FrontEnd
 This is the [page](https://github.com/durgesh-sahani/google-map-php-mysql) I refer to build a frontend. 
-### How to show parking lot spot on the google map?
+### How to show parking spot on the google map?
 1. Run the "parking_lot_php_mysql_google_map", you might need to change the info of DB in the "DbConnect.php". You also need to create database, and table beforehead.
 2. Config phpmyadmin to connect with aws rds before you use xampp to run this frontend file. https://github.com/andrewpuch/phpmyadmin_connect_to_rds https://scottontechnology.com/connect-to-amazon-rds-mysql-with-phpmyadmin/ 
 ```sh
@@ -116,7 +116,7 @@ $ git clone https://github.com/jimmy2002916/parking_lot_php_mysql_google_map.gi
 $ sudo /opt/lampp/lampp restart
 ```
 6. Open http://your_aws_ec2_public_ip_here/parking-lot/ (or without http) then you should be able to see the map on the website
-![Available Parking Lot in New Taipei City, Taiwan](https://github.com/jimmy2002916/parking_lot_streaming_data/blob/master/Screen%20Shot%202020-03-31%20at%202.31.14%20PM.png)
+![Available Parking Spot in New Taipei City, Taiwan](https://github.com/jimmy2002916/parking_lot_streaming_data/blob/master/Screen%20Shot%202020-03-31%20at%202.31.14%20PM.png)
 
 #### Credits
 
